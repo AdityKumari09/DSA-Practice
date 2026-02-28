@@ -9,18 +9,25 @@ public class Test {
         int temp = n;
         int rev = 0;
 
-        while (n != 0)
+        if (n < 0)
         {
-            rev = rev * 10 + n % 10;
-            n = n / 10;
+            System.out.println("Negative number will never be in palindrome");
         }
 
-        if (temp == rev)
-        {
-            System.out.print("The reverse of " + temp + " is " + rev + " and therefor it is palindrome");
-        }
         else {
-            System.out.print("The reverse of " + temp + " is " + rev + " and therefor it is not palindrome");   
+            while (n != 0)
+            {
+                rev = rev * 10 + n % 10;
+                n = n / 10;
+            }
+
+            if (temp == rev)
+            {
+                System.out.println("The reverse of " + temp + " is " + rev + " and therefore it is palindrome");
+            }
+            else {
+                System.out.println("The reverse of " + temp + " is " + rev + " and therefore it is not palindrome");   
+            }
         }
 
     }
