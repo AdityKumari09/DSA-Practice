@@ -17,9 +17,24 @@ public class Test {
             digit++;
         }
 
+        // while (temp1 != 0)
+        // {
+        //     rev += (int) Math.pow(temp1 % 10, digit);
+        //     temp1 = temp1 / 10;
+        // }
+        // without pow function :- 
+
         while (temp1 != 0)
         {
-            rev += (int) Math.pow(temp1 % 10, digit);
+            int lastDigit = temp1 % 10;
+            int power = 1;
+
+            for (int i = 0; i < digit; i++)
+            {
+                power = power * lastDigit;
+            }
+
+            rev += power;
             temp1 = temp1 / 10;
         }
 
@@ -31,6 +46,8 @@ public class Test {
         {
             System.out.println(temp2+ " is not an armstrong number");
         }
+
+        sc.close();
 
     }
 }
