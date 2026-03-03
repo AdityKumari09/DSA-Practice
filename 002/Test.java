@@ -6,8 +6,8 @@ public class Test {
 
         System.out.print("Enter the digit :- ");
         int n = sc.nextInt();
-
         int rev = 0;
+
 
         if (n > 0) {
             while (n > 0)
