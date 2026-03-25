@@ -1,6 +1,6 @@
 class Test {
     public static void main(String[] args) {
-        String name = "Harshita";
+        String name = "Adity";
         int code = name.hashCode();
         System.out.println("Name's hashCode :" + code);
     }
