@@ -15,6 +15,9 @@ public class Test {
         System.out.println(map.getOrDefault("Charlie", 86));
 
         System.out.println(map.containsKey("Civo"));
+
+        System.out.println(map.remove("Rahul")); // it remove key and return value
+        System.out.println(map.containsKey("Rahul"));
         
         System.out.println(map.isEmpty());
 
