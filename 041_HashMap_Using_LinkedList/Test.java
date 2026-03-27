@@ -57,6 +57,40 @@ public class Test
         }
 
 
+        private void rehash()
+        {
+            LinkedList<Node> oldBucket[] = buckets;
+            /*
+                oldBucket is NOT a new array; it is just a reference variable
+                that points to the same array as buckets (no data copy happens).
+            */
+            buckets = new LinkedList[m * 2];
+
+            for (int i = 0; i < m * 2; i++)
+            {
+                buckets[i] = new LinkedList<>();
+            }
+
+            for (int i = 0; i < oldBucket.length; i++)
+            {
+                LinkedList<Node> ll = oldBucket[i];
+
+                /*
+                    ll is a reference variable that points to the existing 
+                    LinkedList stored at oldBucket[i].
+                */
+
+                for (int j = 0; i < ll.size(); j++)
+                {
+                    Node node = ll.get(i);
+                    /*
+                        node is a ref variable that points to the existing Node
+                        object returned by ll.get(j); no new Node is created here.
+                    */
+                    put(node.key, node.value);
+                }
+            }
+        }
 
         public void put(K key, V value)
         {
@@ -79,9 +113,61 @@ public class Test
             {
                 if(lf > 2.0)
                 {
-                    //rehash();
+                    rehash();
                 }
             }
         }
+
+        public V get(K key)
+        {
+            int bucket_index = hashFunction(key);
+            int data_index = searchInLL(key, bucket_index);
+
+            if (data_index == -1)
+            {
+                return null;
+            }
+
+            else{
+                Node node = buckets[bucket_index].get(data_index);
+                return node.value;
+            }
+        }
+
+        public boolean containsKey(K key)
+        {
+            int bucket_index = hashFunction(key);
+            int data_index = searchInLL(key, bucket_index);
+
+            if (data_index == -1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public V remove(K key)
+        {
+            int bucket_index = hashFunction(key);
+            int data_index = searchInLL(key, bucket_index);
+
+            if (data_index == -1)
+            {
+                return null;
+            }
+
+            else
+            {
+                Node node = buckets[bucket_index].remove(data_index);
+                n--;
+                return node.value;
+            }
+        }
+
+
     }
+
 }
