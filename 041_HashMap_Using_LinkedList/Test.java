@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Test
@@ -56,7 +57,7 @@ public class Test
             return -1;
         }
 
-
+        @SuppressWarnings("unchecked")
         private void rehash()
         {
             LinkedList<Node> oldBucket[] = buckets;
@@ -167,7 +168,43 @@ public class Test
             }
         }
 
+        public boolean isEmpty()
+        {
+            return n == 0;
+        }
 
+        public ArrayList<K> keySet()
+        {
+            ArrayList<K> keys = new ArrayList<>();
+
+            for (int i = 0; i < buckets.length; i++)// bucket_index
+            {
+                LinkedList<Node> ll = buckets[i];
+
+                for (int j = 0; j < ll.size(); j++)
+                {
+                    Node node = ll.get(j);
+                    keys.add(node.key);
+                }
+            }
+
+            return keys;
+        }
     }
 
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap();
+        map.put("India", 88);
+        map.put("Nepal", 42);
+        map.put("Russia", 64);
+
+        ArrayList<String> keys = map.keySet();
+        for (int i = 0; i < keys.size(); i++)
+        {
+            System.out.println(keys.get(i) + " " + map.get(keys.get(i)));
+        }
+
+        map.remove("Russia");
+        System.out.println(map.get("Russia"));
+    }
 }
