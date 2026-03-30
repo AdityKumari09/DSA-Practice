@@ -81,7 +81,7 @@ public class Test
                     LinkedList stored at oldBucket[i].
                 */
 
-                for (int j = 0; i < ll.size(); j++)
+                for (int j = 0; j < ll.size(); j++)
                 {
                     Node node = ll.get(i);
                     /*
