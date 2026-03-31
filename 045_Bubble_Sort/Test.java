@@ -42,5 +42,7 @@ public class Test {
         {
             System.out.print(nums + " ");
         }
+
+        sc.close();
     }    
 }
