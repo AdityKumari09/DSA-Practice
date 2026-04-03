@@ -72,7 +72,8 @@ public class Test {
 
         for (int x = 0; x < temp.length; x++)
         {
-            arr[start + x] = temp[x];
+            arr[start] = temp[x];
+            start++;
         }
 
     }
