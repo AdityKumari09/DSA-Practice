@@ -36,5 +36,13 @@ public class Test {
         {
             System.out.print(num + " ");
         }
+
+        sc.close();
     }
 }
+
+/*
+    the outer loop (i) selects the position to be filled, the inner loop (j) 
+    searches for the smallest element in the remaining array, and then that 
+    element is swapped with the current position.
+*/
