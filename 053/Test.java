@@ -43,6 +43,13 @@ public class Test {
             }
         }
 
+        /*
+            For each element, if it’s greater than max, we update both max and 
+            second max. 
+            Otherwise, if it lies between max and second max, we update second 
+            max. Same logic applies for minimum
+        */
+
         /* 
             for (int i = 0; i < n; i++)
             {
