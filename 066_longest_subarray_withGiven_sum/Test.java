@@ -16,6 +16,35 @@ public class Test {
         System.out.print("Enter the integer :- ");
         int k = sc.nextInt();
 
+        System.out.print("Longest subarray is :- " + longest_subArray(arr, n, k));
+    }
+
+    public static int longest_subArray(int[] arr, int n, int k)
+    {
+        int i = 0; 
+        int j = 0;
+        int sum = 0;
+        int window_length = 0;
+
+        while (j < n)
+        {
+            sum += arr[j];
+
+            while (sum > k)
+            {
+                sum -= arr[i];
+                i++;
+            }
+
+            if (sum == k)
+            {
+                window_length = Math.max(window_length, j - i + 1);
+            }
+
+            j++;
+        }
+
+        return window_length;
     }
 }
 
