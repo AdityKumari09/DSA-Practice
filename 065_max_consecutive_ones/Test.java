@@ -37,3 +37,11 @@ public class Test {
         return last_maxCount;
     }
 }
+
+/*
+    Problem Statement: Given an array that contains only 1 and 0 return the 
+                       count of maximum consecutive ones in the array..
+    Example 1:
+    Input: prices = {1, 1, 0, 1, 1, 1}
+    Output: 3
+*/
