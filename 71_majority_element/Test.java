@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Test {
@@ -19,6 +18,7 @@ public class Test {
         System.out.print("Majority element is " + majorityElement(arr));
     }
 
+/* 
     public static int majorityElement(int[] nums)
     {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -42,6 +42,36 @@ public class Test {
         }
 
         return nums[0];
+    }
+*/
+
+// this approach is known as boyer-moore voting algorithm, all the minor elemnts
+// will get cancelled and at the end majority element get left.
+
+    public static int majorityElement(int[] nums)
+    {
+        int count = 0;
+        int candidate = 0;
+
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (count == 0)
+            {
+                candidate = nums[i];
+            }
+
+            if (candidate == nums[i])
+            {
+                count++;
+            }
+
+            else
+            {
+                count--;
+            }
+        }
+
+        return candidate;
     }
 }
 
