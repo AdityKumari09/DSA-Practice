@@ -16,8 +16,6 @@ public class Test {
 
                 System.out.println();
             }
-
-            sc.close();
             
         }
     }

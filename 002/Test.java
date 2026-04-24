@@ -26,6 +26,8 @@ public class Test {
         }
 
         System.out.println("The reverse will be :- " + rev);
+
+        sc.close();
     }
 }
 

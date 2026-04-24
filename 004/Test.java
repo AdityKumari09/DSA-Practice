@@ -29,6 +29,8 @@ public class Test {
 
         // System.out.print("GCD of give numbers will be " + gcd);
 
+        sc.close();
+
     }
 }
 

@@ -13,6 +13,9 @@ public class Test {
         }
 
         System.out.print("The number of digits are " + count);
+
+
+        sc.close();
     }
 }
 

@@ -1,24 +1,21 @@
 import java.util.Scanner;
-
 public class Test {
-    public static void main(String[] args)
+    public static void main (String[] args)
     {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter the number of rows :- ");
         int n = sc.nextInt();
 
-        char ch = 'A';
-
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i <= n; i++)
         {
-            for (int j = 0; j <= i; j++)
+            char ch = 'A';
+
+            for (int j = n; j >= i; j--)
             {
                 System.out.print(ch);
+                ch++;
             }
 
-            ch++;
-            
             System.out.println();
         }
 
@@ -27,9 +24,9 @@ public class Test {
 }
 
 /*
+    ABCDE
+    ABCD
+    ABC
+    AB
     A
-    BB
-    CCC
-    DDDD
-    EEEEE
 */
