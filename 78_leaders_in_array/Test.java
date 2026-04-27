@@ -19,6 +19,8 @@ public class Test {
         List<Integer> list = leaders(arr);
         
         System.out.print(list);
+
+        sc.close();
     }
 
     public static List<Integer> leaders(int[] arr)
