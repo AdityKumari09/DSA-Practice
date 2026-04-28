@@ -31,7 +31,7 @@ public class Test {
             set.add(nums);
         }
 
-        for (int nums : arr)
+        for (int nums : set)
         {
             if(!set.contains(nums - 1))
             {
