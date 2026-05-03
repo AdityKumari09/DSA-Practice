@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Test {
@@ -25,19 +27,41 @@ public class Test {
     {
         int count = 0;
         
-        for(int i = 0; i < arr.length; i++)
-        {
-            int sum = 0;
-            
-            for (int j = i; j < arr.length; j++)
-            {
-                sum += arr[j];
+        // for(int i = 0; i < arr.length; i++)
+        // {
+        //     int sum = 0;
 
-                if (sum == k)
-                {
-                    count++;
-                }
+        //     for (int j = i; j < arr.length; j++)
+        //     {
+        //         sum += arr[j];
+
+        //         if (sum == k)
+        //         {
+        //             count++;
+        //         }
+        //     }
+        // }
+
+        Map<Integer, Integer> map = new HashMap<>();
+        int prefixSum = 0;
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            prefixSum += arr[i];
+
+            if (prefixSum == k)
+            {
+                count++;
             }
+
+            // check for previous prefix
+            if (map.containsKey(prefixSum - k))
+            {
+                count += map.get(prefixSum - k);
+            }
+
+            // to store or update prefixSum.
+            map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
         }
 
         return count;
